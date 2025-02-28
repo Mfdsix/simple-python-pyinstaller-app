@@ -36,7 +36,7 @@ pipeline {
                 sh 'apt-get update && apt-get install -y python-dev'
                 sh 'wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -O get-pip.py'
                 sh 'python get-pip.py'
-                sh 'pip install pyinstaller'
+                sh 'pip install "pyinstaller<3.7"'
                 sh 'pyinstaller --onefile sources/add2vals.py'
             }
             post {
